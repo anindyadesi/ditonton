@@ -1,0 +1,13 @@
+import 'package:core/common/failure.dart';
+import 'package:core/domain/repositories/movie_repository.dart';
+import 'package:dartz/dartz.dart';
+
+class GetWatchlistMovies {
+  final MovieRepository _repository;
+
+  GetWatchlistMovies(this._repository);
+
+  Future<Either<Failure, List<List<dynamic>>>> execute() {
+    return _repository.getWatchlistMovies();
+  }
+}
